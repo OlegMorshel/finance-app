@@ -1,0 +1,13 @@
+.navBarWrapper {
+  grid-area: nav;
+  background-color: #73eccc;
+  padding: 45px 15px 15px;
+  @include flex(flex-start, center, column);
+
+  -webkit-box-shadow: -6px 0px 5px -5px rgba(34, 60, 80, 0.6) inset;
+  -moz-box-shadow: -6px 0px 5px -5px rgba(34, 60, 80, 0.6) inset;
+  box-shadow: -6px 0px 5px -5px rgba(34, 60, 80, 0.6) inset;
+  .profileImage {
+    border-radius: 50%;
+  }
+}

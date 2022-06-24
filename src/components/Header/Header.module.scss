@@ -1,9 +1,12 @@
 .headerWrapper {
   position: fixed;
   @include flex(flex-end, center, row);
-  width: 100%;
+  width: calc(100% - 280px);
+  right: 0;
   padding: 15px;
   background-color: #73eccc;
+
+  grid-area: head;
 
   .profileImage {
     object-fit: cover;
