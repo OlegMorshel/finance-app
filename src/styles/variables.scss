@@ -18,7 +18,14 @@ $primary0: #e4d3ff;
 
 $accentP100: #ff7966;
 $accentP50: #ffa699;
-$accentP0: #ffd2cc; 
+$accentP0: #ffd2cc;
 
 $acceptS100: #00fad9;
-$acceptS50: #7DFFEE;
+$acceptS50: #7dffee;
+
+@mixin flex($jus, $al, $fxd) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $al;
+  flex-direction: $fxd;
+}

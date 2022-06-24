@@ -17,6 +17,11 @@ module.exports = {
   devtool: 'source-map',
   target: 'web',
   resolve: {
+    alias: {
+      src: path.resolve(__dirname, '/src/'),
+      components: path.resolve(__dirname, 'src/components/'),
+      store: path.resolve(__dirname, 'src/store/'),
+    },
     extensions: ['.ts', '.tsx', '.js'],
   },
   module: {
