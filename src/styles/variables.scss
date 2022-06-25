@@ -24,8 +24,9 @@ $acceptS100: #00fad9;
 $acceptS50: #7dffee;
 
 @mixin flex($jus, $al, $fxd) {
-  display: flex;
-  justify-content: $jus;
-  align-items: $al;
-  flex-direction: $fxd;
+	display: flex;
+	justify-content: $jus;
+	align-items: $al;
+	flex-direction: $fxd;
 }
+$background: #393f44;

@@ -1,16 +1,16 @@
 .headerWrapper {
-  position: fixed;
-  @include flex(flex-end, center, row);
-  width: calc(100% - 280px);
-  right: 0;
-  padding: 15px;
-  background-color: #73eccc;
+	position: fixed;
+	@include flex(flex-end, center, row);
+	width: calc(100% - 280px);
+	right: 0;
+	padding: 15px;
+	// background: linear-gradient(161.44deg, #616367 3.63%, #26292f 62.39%);
+	background: #393f44;
+	grid-area: head;
 
-  grid-area: head;
-
-  .profileImage {
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: 15px;
-  }
+	.profileImage {
+		object-fit: cover;
+		border-radius: 50%;
+		margin-right: 15px;
+	}
 }

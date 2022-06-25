@@ -26,10 +26,11 @@
     "dev": "webpack serve --mode=development --progress",
     "build": "webpack",
     "build:prod": "webpack --config webpack.config.prod.js",
-		"lint": "eslint --fix", 
+    "lint": "eslint --fix",
     "types": "tsc --noEmit && eslint -c .eslintrc.json",
-    "prettier": "prettier --write ."  
-  }, 
+    "prettier": "prettier --write .",
+    "format-styles": "prettier-stylelint --write 'src/**/*.{css,scss}'"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -52,9 +53,12 @@
     "postcss-import": "^14.1.0",
     "postcss-loader": "^7.0.0",
     "prettier": "^2.7.1",
+    "prettier-stylelint": "^0.4.2",
     "process": "^0.11.10",
     "sass-loader": "^13.0.0",
     "style-loader": "^3.3.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-prettier": "^2.0.0",
     "ts-loader": "^9.3.0",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "tslint": "^6.1.3",
