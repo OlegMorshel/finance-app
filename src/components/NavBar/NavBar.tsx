@@ -16,7 +16,7 @@ const NavBar: React.FC = () => {
 				className={cnb('profileImage')}
 				height={140}
 				width={140}
-				src={'https://i.pinimg.com/originals/fe/a5/6e/fea56edde1aa7e4d8874a03cd1a95bd6.jpg'}
+				src={'https://kinkin.ch/app/uploads/2019/03/placeholder.jpg'}
 			/>
 			<NavItem />
 		</div>

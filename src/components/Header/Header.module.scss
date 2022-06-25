@@ -1,16 +1,40 @@
 .headerWrapper {
-	position: fixed;
-	@include flex(flex-end, center, row);
-	width: calc(100% - 280px);
-	right: 0;
-	padding: 15px;
-	// background: linear-gradient(161.44deg, #616367 3.63%, #26292f 62.39%);
-	background: #393f44;
 	grid-area: head;
+
+	position: fixed;
+	right: 0;
+
+	display: inline-flex;
+	justify-content: flex-end;
+	align-items: center;
+	column-gap: 16px;
+
+	width: 100%;
+	padding: 15px;
+
+	background: #ffffff;
+	-webkit-box-shadow: 0px 8px 8px -5px rgb(179 187 199 / 80%);
+	-moz-box-shadow: 0px 8px 8px -5px rgb(179 187 199 / 80%);
+	box-shadow: 0px 8px 8px -5px rgb(179 187 199 / 80%);
+
+	border-bottom-right-radius: 20px;
 
 	.profileImage {
 		object-fit: cover;
+
 		border-radius: 50%;
-		margin-right: 15px;
+		
+		box-shadow: 0px 0px 5px -0px $textColor;
+		-webkit-box-shadow: 0px 0px 5px -0px $textColor;
+		-moz-box-shadow: 0px 0px 5px -0px $textColor;
+	}
+}
+h2 {
+	font-family: 'Inter', sans-serif;
+	color: $textColor;
+}
+.arrowWrapper {
+	svg {
+		fill: $textColor;
 	}
 }
