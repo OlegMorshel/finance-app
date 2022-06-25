@@ -25,8 +25,11 @@
   "scripts": {
     "dev": "webpack serve --mode=development --progress",
     "build": "webpack",
-    "build:prod": "webpack --config webpack.config.prod.js"
-  },
+    "build:prod": "webpack --config webpack.config.prod.js",
+		"lint": "eslint --fix", 
+    "types": "tsc --noEmit && eslint -c .eslintrc.json",
+    "prettier": "prettier --write ."  
+  }, 
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -80,7 +80,15 @@
         "@typescript-eslint/no-non-null-assertion": "error",
         "@typescript-eslint/no-parameter-properties": "off",
         "@typescript-eslint/no-unused-expressions": "error",
-        "@typescript-eslint/no-use-before-define": ["error", { "variables": false }],
+        "@typescript-eslint/no-use-before-define": [
+          "error",
+          {
+            "functions": true,
+            "classes": true,
+            "variables": false,
+            "allowNamedExports": false
+          }
+        ],
         "@typescript-eslint/no-var-requires": "error",
         "@typescript-eslint/prefer-for-of": "error",
         "@typescript-eslint/prefer-function-type": "error",
@@ -184,6 +192,7 @@
         "no-empty": "off",
         "no-eval": "error",
         "no-extra-parens": "off",
+        "no-duplicate-imports": "error",
         "no-extra-semi": "off",
         "no-fallthrough": "error",
         "no-floating-decimal": "off",

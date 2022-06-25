@@ -1,18 +1,18 @@
-import classNames from 'classnames/bind';
-import React from 'react';
-import Picture from '../Picture/Picture';
-import NavItem from './components/NavItem/NavItem';
-import styles from './NavBar.module.scss';
-const cnb = classNames.bind(styles);
+import classNames from 'classnames/bind'
+import React from 'react'
+import Picture from '../Picture/Picture'
+import NavItem from './components/NavItem/NavItem'
+import styles from './NavBar.module.scss'
+const cnb = classNames.bind(styles)
 export enum NavBarSize {
   SMALL = 'SMALL',
   LARGE = 'LARGE',
 }
 const NavBar: React.FC = () => {
   return (
-    <div className={cnb("navBarWrapper")}>
+    <div className={cnb('navBarWrapper')}>
       <Picture
-        alt="profile"
+        alt='profile'
         className={cnb('profileImage')}
         height={140}
         width={140}
@@ -20,7 +20,7 @@ const NavBar: React.FC = () => {
       />
       <NavItem />
     </div>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

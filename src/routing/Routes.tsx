@@ -1,7 +1,7 @@
-import React, { ReactElement, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { ReactElement, Suspense } from 'react'
+import { Route, Routes } from 'react-router-dom'
 
-const Layout = React.lazy(() => import('./../components/Layout/Layout'));
+const Layout = React.lazy(() => import('./../components/Layout/Layout'))
 
 const RoutesContainer: React.FC = (): ReactElement => {
   // React.useEffect(() => {
@@ -19,11 +19,11 @@ const RoutesContainer: React.FC = (): ReactElement => {
     //   }
     // >
     <Routes>
-      <Route path="/" element={<Layout />} />
+      <Route path='/' element={<Layout />} />
       <Route element={<></>} />
     </Routes>
     // </Suspense>
-  );
-};
+  )
+}
 
-export default RoutesContainer;
+export default RoutesContainer

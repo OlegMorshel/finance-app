@@ -1,16 +1,16 @@
-const webpack = require('webpack');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const dotenv = require('dotenv');
-const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const dotenv = require('dotenv')
+const Dotenv = require('dotenv-webpack')
 // enable this for analyze
 // const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
-const isDev = process.env.NODE_ENV !== 'production';
-const envConfig = dotenv.config().parsed;
+const isDev = process.env.NODE_ENV !== 'production'
+const envConfig = dotenv.config().parsed
 module.exports = {
   mode: 'development',
   entry: './index.tsx',
@@ -154,4 +154,4 @@ module.exports = {
     // enable this for analyze
     // new BundleAnalyzerPlugin(),
   ].filter(Boolean),
-};
+}

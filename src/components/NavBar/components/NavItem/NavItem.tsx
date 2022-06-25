@@ -1,7 +1,7 @@
-import React from 'react';
-import { NavBarSize } from '../../NavBar';
+import React from 'react'
+import { NavBarSize } from '../../NavBar'
 interface Props {
-  mode?: NavBarSize;
+  mode?: NavBarSize
 }
 const NavItem: React.FC<Props> = ({ mode = NavBarSize.LARGE }) => {
   return (
@@ -9,7 +9,7 @@ const NavItem: React.FC<Props> = ({ mode = NavBarSize.LARGE }) => {
       <p>Icon</p>
       {mode === NavBarSize.LARGE && <p>Название</p>}
     </div>
-  );
-};
+  )
+}
 
-export default NavItem;
+export default NavItem

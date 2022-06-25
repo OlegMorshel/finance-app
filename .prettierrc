@@ -1,9 +1,15 @@
 {
   "bracketSpacing": true,
   "printWidth": 140,
-  "semi": true,
+  "semi": false,
   "singleQuote": true,
   "tabWidth": 2,
   "useTabs": false,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "allowParent": "avoid",
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": true,
+  "bracketSameLine": true,
+  "jsxBracketSameLine": true,
+  "arrowParens": "avoid"
 }
