@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 import React from 'react'
-import {ArrowDown} from '../../assets/Icons'
+import {ArrowDownSvg} from '../../assets/Icons'
 import Picture from '../Picture/Picture'
 import styles from './Header.module.scss'
 const cnb = classNames.bind(styles)
@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 			/>
 			<h2>Иван Петров</h2>
 			<div className={cnb('arrowWrapper')}>
-				<ArrowDown />
+				<ArrowDownSvg />
 			</div>
 		</div>
 	)

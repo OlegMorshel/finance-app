@@ -23,7 +23,7 @@
 		object-fit: cover;
 
 		border-radius: 50%;
-		
+
 		box-shadow: 0px 0px 5px -0px $textColor;
 		-webkit-box-shadow: 0px 0px 5px -0px $textColor;
 		-moz-box-shadow: 0px 0px 5px -0px $textColor;
@@ -34,6 +34,8 @@ h2 {
 	color: $textColor;
 }
 .arrowWrapper {
+	cursor: pointer;
+	display: flex;
 	svg {
 		fill: $textColor;
 	}

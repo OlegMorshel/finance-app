@@ -1,0 +1,18 @@
+.navItemWrapper {
+	display: inline-flex;
+	justify-content: flex-start;
+	align-items: center;
+	column-gap: 16px;
+
+	.navIcon {
+		svg {
+			fill: $textColor;
+		}
+	}
+
+	.fieldName {
+		font-family: 'Inter', sans-serif;
+		font-weight: 500;
+		color: $textColor;
+	}
+}
