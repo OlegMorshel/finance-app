@@ -1,48 +1,57 @@
 import {AimSvg, CashConditionals, DashboardSvg, InvestSvg, MonetizationSvg, ReceiptSvg, SettingsSvg, UnderLimitSvg} from '../assets/Icons'
-
+export enum PagesType {
+	DASHBOARD = 'DASHBOARD',
+	REVENUE = 'REVENUE',
+	EXPENSES = 'EXPENSES',
+	INVESTMENT = 'INVESTMENT',
+	UNEXPECTED_EXPENSES = 'UNEXPECTED_EXPENSES',
+	ASSET = 'ASSET',
+	PURPOSE = 'PURPOSE',
+	SETTINGS = 'SETTINGS',
+}
 export interface NavBarItemType {
-	id: number
+	id: PagesType
 	name: string
 	icon: JSX.Element
 }
 export const NavBarItems: NavBarItemType[] = [
 	{
-		id: 1,
+		id: PagesType.DASHBOARD,
 		name: 'Dashboard',
 		icon: DashboardSvg(),
 	},
 	{
-		id: 2,
+		id: PagesType.REVENUE,
 		name: 'Revenue',
 		icon: MonetizationSvg(),
 	},
 	{
-		id: 3,
+		id: PagesType.EXPENSES,
 		name: 'Expenses',
 		icon: ReceiptSvg(),
 	},
 	{
-		id: 4,
+		id: PagesType.INVESTMENT,
 		name: 'Investment',
 		icon: InvestSvg(),
 	},
 	{
-		id: 5,
+		id: PagesType.UNEXPECTED_EXPENSES,
 		name: 'Unexpected expenses',
 		icon: UnderLimitSvg(),
 	},
 	{
-		id: 6,
+		id: PagesType.ASSET,
 		name: 'Asset',
 		icon: CashConditionals(),
 	},
 	{
-		id: 7,
+		id: PagesType.PURPOSE,
 		name: 'Purposes',
 		icon: AimSvg(),
 	},
 	{
-		id: 8,
+		id: PagesType.SETTINGS,
 		name: 'Settings',
 		icon: SettingsSvg(),
 	},

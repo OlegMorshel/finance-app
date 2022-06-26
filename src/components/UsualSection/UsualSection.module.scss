@@ -1,0 +1,17 @@
+.sectionWrapper {
+	padding: 15px;
+	border-radius: 8px;
+	background-color: #ffffff;
+	@include defaultShadow;
+
+	.headerSection {
+		@include flex(space-between, center, row);
+		margin-bottom: 20px;
+		.title {
+			color: $textColor;
+		}
+		.subtitle {
+			color: #3373fb;
+		}
+	}
+}
