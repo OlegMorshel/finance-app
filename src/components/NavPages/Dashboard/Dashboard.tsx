@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 import React from 'react'
-import ChartSection from '../../Chart/Chart'
+import Chart from '../../Chart/Chart'
 import UsualSection from '../../UsualSection/UsualSection'
 import styles from './Dashboard.module.scss'
 const cnb = classNames.bind(styles)
@@ -10,9 +10,7 @@ const Dashboard: React.FC<Props> = () => {
 		<div className={cnb('dashboardLayout')}>
 			<div className={cnb('contentBlock')}>
 				<UsualSection title='Доходы' subtitle='Все доходы'>
-					<div className={cnb('chartContainer')}>
-						<ChartSection />
-					</div>
+					<div className={cnb('chartContainer')}><Chart /></div>
 				</UsualSection>
 			</div>
 		</div>
