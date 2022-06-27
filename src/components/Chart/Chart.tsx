@@ -8,7 +8,10 @@ interface DataType {
 	date: string
 	value: number
 }
-const Chart = () => {
+interface Props {
+	height?: number
+}
+const Chart: React.FC<Props> = ({height = 225}) => {
 	const data: DataType[] = []
 	for (let num = 30; num >= 0; num--) {
 		data.push({
@@ -22,7 +25,7 @@ const Chart = () => {
 			return (
 				<div className={cnb('tooltip')}>
 					<h4>{format(parseISO(label), 'eeee, d MMM, yyyy')}</h4>
-					<p>{(payload[0]?.value as number)?.toFixed(2)}₽</p>
+					<p>{Number(payload[0]?.value)?.toFixed(2)}₽</p>
 				</div>
 			)
 		}
@@ -32,19 +35,19 @@ const Chart = () => {
 
 	return (
 		<>
-			<ResponsiveContainer width={'100%'} height={400}>
+			<ResponsiveContainer width={'100%'} height={height}>
 				<AreaChart data={data}>
 					<defs>
 						<linearGradient id='color' x1='0' y1='0' x2='0' y2='1'>
-							<stop offset='5%' stopColor='#46a76e' stopOpacity={0.8} />
-							<stop offset='95%' stopColor='#46a76e' stopOpacity={0} />
+							<stop offset='15%' stopColor='#00c054' stopOpacity={0.8} />
+							<stop offset='100%' stopColor='#00c054' stopOpacity={0.05} />
 						</linearGradient>
 						{/* <linearGradient id='colorPv' x1='0' y1='0' x2='0' y2='1'>
 							<stop offset='5%' stopColor='#82ca9d' stopOpacity={0.8} />
 							<stop offset='95%' stopColor='#82ca9d' stopOpacity={0} />
 						</linearGradient> */}
 					</defs>
-					<Area dataKey={'value'} stroke={'#46a76e'} fill={'url(#color)'} />
+					<Area dataKey={'value'} stroke={'#00c054'} fill={'url(#color)'} />
 					{/* <Area dataKey={'value'} stroke={'#46a76e'} fill={'url(#color)'} /> */}
 
 					<XAxis
