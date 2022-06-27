@@ -1,0 +1,43 @@
+.title {
+	margin-bottom: 15px;
+	color: #ababab;
+	font-size: 18px;
+	font-weight: 600;
+}
+.sectionLayout {
+	display: flex;
+	.ranges {
+		width: 100%;
+		.actualRange,
+		.planRange {
+			border-radius: 3px;
+		}
+	}
+	.amounts {
+		flex: 1 0 auto;
+		margin-left: 25px;
+		.realAmount,
+		.planAmount {
+			font-size: 18px;
+		}
+		.planAmount {
+			color: #ababab;
+		}
+		.realAmount {
+			color: #272728;
+		}
+	}
+}
+
+.greenColor {
+	background-color: rgb(31, 192, 55);
+}
+.greenHiddenColor {
+	background-color: rgba(31, 192, 55, 0.3);
+}
+.redColor {
+	background-color: rgb(239, 58, 58);
+}
+.redHiddenColor {
+	background-color: rgba(239, 58, 58, 0.3);
+}
