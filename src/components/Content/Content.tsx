@@ -7,11 +7,39 @@ const cnb = classNames.bind(styles)
 interface Props {
 	urlStringParam: string
 }
-const Content: React.FC<Props> = () => {
-	return (
-		<div className={cnb('contentWrapper')}>
-			<Dashboard />
-		</div>
-	)
+
+export type QueryUrlParamType =
+	| 'dashboard'
+	| 'asset'
+	| 'expenses'
+	| 'investment'
+	| 'purpose'
+	| 'revenue'
+	| 'unexpectedExpenses'
+	| 'settings'
+const Content: React.FC<Props> = ({urlStringParam}) => {
+	const getContent = (param: QueryUrlParamType) => {
+		switch (param) {
+			case 'dashboard':
+				return <Dashboard />
+			case 'revenue':
+				return <></>
+			case 'asset':
+				return <></>
+			case 'expenses':
+				return <></>
+			case 'investment':
+				return <></>
+			case 'purpose':
+				return <></>
+			case 'unexpectedExpenses':
+				return <></>
+			case 'settings':
+				return <></>
+			default:
+				return <Dashboard />
+		}
+	}
+	return <div className={cnb('contentWrapper')}>{getContent(urlStringParam as QueryUrlParamType)}</div>
 }
 export default Content

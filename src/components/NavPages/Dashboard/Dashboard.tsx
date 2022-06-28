@@ -21,6 +21,9 @@ const Dashboard: React.FC<Props> = () => {
 				<UsualSection title='Структура доходов' subtitle='ВСЕ ДОХОДЫ'>
 					<PieRechartComponent />
 				</UsualSection>
+				<UsualSection title='Структура расходов' subtitle='ВСЕ РАСХОДЫ'>
+					<PieRechartComponent />
+				</UsualSection>
 			</div>
 		</div>
 	)
