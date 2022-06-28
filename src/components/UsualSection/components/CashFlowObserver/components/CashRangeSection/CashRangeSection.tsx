@@ -16,22 +16,22 @@ const CashRangeSection: React.FC<Props> = ({planValue, realValue, title, height 
 			<div className={cnb('sectionLayout')}>
 				<div className={cnb('ranges')}>
 					<div
-						className={cnb('actualRange', {greenColor: (type === 'earn'), redColor: (type === 'spend')})}
+						className={cnb('actualRange', {greenColor: type === 'earn', redColor: type === 'spend'})}
 						style={{width: `${(realValue / Math.max(realValue, planValue)) * 100}%`, height: height}}
 					/>
 					<div
-						className={cnb('planRange', {greenHiddenColor: (type === 'earn'), redHiddenColor: (type === 'spend')})}
+						className={cnb('planRange', {greenHiddenColor: type === 'earn', redHiddenColor: type === 'spend'})}
 						style={{width: `${(planValue / Math.max(realValue, planValue)) * 100}%`, height: height}}
 					/>
 				</div>
 				<div className={cnb('amounts')}>
 					<p className={cnb('realAmount')} style={{height: height}}>
 						{type === 'spend' ? '-' : '+'}
-						{realValue} ₽
+						{realValue} ₽ (факт)
 					</p>
 					<p className={cnb('planAmount')} style={{height: height}}>
 						{type === 'spend' ? '-' : '+'}
-						{planValue} ₽
+						{planValue} ₽ (план)
 					</p>
 				</div>
 			</div>

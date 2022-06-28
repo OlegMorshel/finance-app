@@ -13,6 +13,7 @@ const CashFlowObserver: React.FC<Props> = () => {
 				<CashFlowSection title={'Вывод денег'} subtitle={'350 000 ₽'} />
 			</div>
 			<CashRangeSection type='earn' planValue={900245} realValue={1520322} title={'Доходы'} />
+			<CashRangeSection type='spend' planValue={650456} realValue={450565} title={'Расходы'} />
 		</div>
 	)
 }
