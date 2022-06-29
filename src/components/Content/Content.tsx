@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind'
 import React from 'react'
 import Dashboard from '../NavPages/Dashboard/Dashboard'
+import Revenue from '../NavPages/Revenue/Revenue'
 import styles from './Content.module.scss'
 const cnb = classNames.bind(styles)
 
@@ -23,7 +24,7 @@ const Content: React.FC<Props> = ({urlStringParam}) => {
 			case 'dashboard':
 				return <Dashboard />
 			case 'revenue':
-				return <></>
+				return <Revenue />
 			case 'asset':
 				return <></>
 			case 'expenses':

@@ -69,11 +69,14 @@ const PieRechartComponent: React.FC = () => {
 					color='#000000'
 					dataKey='value'
 					nameKey='name'
-					cx='45%'
+					cx='50%'
 					cy='50%'
-					innerRadius='60%'
-					outerRadius='80%'
+					radius={undefined}
+					innerRadius={0}
+					animationBegin={120}
+					outerRadius='100%'
 					fill='#8884d8'
+					paddingAngle={5}
 					startAngle={90}
 					endAngle={-270}>
 					{pieData.map((entry, index) => (
