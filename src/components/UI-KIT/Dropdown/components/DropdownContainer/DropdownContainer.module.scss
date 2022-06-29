@@ -1,0 +1,25 @@
+.dropdownWrapper {
+	width: 100%;
+	min-height: 40px;
+	border-radius: 8px;
+	border: 1px solid $background;
+	padding: 5px 10px;
+
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	&.activeDropdownWrapper {
+		border-bottom: 1px solid transparent;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+.arrowOpenStyle {
+	transform: translateY(-2px) rotate(180deg);
+	transition: all 0.24s linear;
+}
+.arrowStyle {
+	transition: all 0.24s linear;
+	transform: translateY(4px);
+}

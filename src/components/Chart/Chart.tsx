@@ -7,6 +7,7 @@ const cnb = classNames.bind(styles)
 interface DataType {
 	date: string
 	value: number
+	value2: number
 }
 interface Props {
 	height?: number
@@ -17,6 +18,7 @@ const Chart: React.FC<Props> = ({height = 225}) => {
 		data.push({
 			date: subDays(new Date(), num).toISOString().substring(0, 10),
 			value: 1 + Math.random(),
+			value2: 1 - Math.random(),
 		})
 	}
 
@@ -26,6 +28,7 @@ const Chart: React.FC<Props> = ({height = 225}) => {
 				<div className={cnb('tooltip')}>
 					<h4>{format(parseISO(label), 'eeee, d MMM, yyyy')}</h4>
 					<p>{Number(payload[0]?.value)?.toFixed(2)}₽</p>
+					<p>{Number(payload[1]?.value)?.toFixed(2)}₽</p>
 				</div>
 			)
 		}
@@ -42,13 +45,13 @@ const Chart: React.FC<Props> = ({height = 225}) => {
 							<stop offset='15%' stopColor='#00c054' stopOpacity={0.8} />
 							<stop offset='100%' stopColor='#00c054' stopOpacity={0.05} />
 						</linearGradient>
-						{/* <linearGradient id='colorPv' x1='0' y1='0' x2='0' y2='1'>
-							<stop offset='5%' stopColor='#82ca9d' stopOpacity={0.8} />
-							<stop offset='95%' stopColor='#82ca9d' stopOpacity={0} />
-						</linearGradient> */}
+						<linearGradient id='colorPv' x1='0' y1='0' x2='0' y2='1'>
+							<stop offset='5%' stopColor='#f01a42' stopOpacity={0.8} />
+							<stop offset='95%' stopColor='#f01a42' stopOpacity={0} />
+						</linearGradient>
 					</defs>
 					<Area dataKey={'value'} stroke={'#00c054'} fill={'url(#color)'} />
-					{/* <Area dataKey={'value'} stroke={'#46a76e'} fill={'url(#color)'} /> */}
+					<Area dataKey={'value2'} stroke={'#f01a42'} fill={'url(#colorPv)'} />
 
 					<XAxis
 						dataKey={'date'}
