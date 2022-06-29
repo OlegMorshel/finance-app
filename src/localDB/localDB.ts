@@ -17,42 +17,42 @@ export interface NavBarItemType {
 export const NavBarItems: NavBarItemType[] = [
 	{
 		id: PagesType.DASHBOARD,
-		name: 'Dashboard',
+		name: 'Рабочий стол',
 		icon: DashboardSvg(),
 	},
 	{
 		id: PagesType.REVENUE,
-		name: 'Revenue',
+		name: 'Доходы',
 		icon: MonetizationSvg(),
 	},
 	{
 		id: PagesType.EXPENSES,
-		name: 'Expenses',
+		name: 'Расходы',
 		icon: ReceiptSvg(),
 	},
 	{
 		id: PagesType.INVESTMENT,
-		name: 'Investment',
+		name: 'Инвестиции',
 		icon: InvestSvg(),
 	},
 	{
 		id: PagesType.UNEXPECTED_EXPENSES,
-		name: 'Unexpected expenses',
+		name: 'Непредвиденные расходы',
 		icon: UnderLimitSvg(),
 	},
 	{
 		id: PagesType.ASSET,
-		name: 'Asset',
+		name: 'КЭШ',
 		icon: CashConditionals(),
 	},
 	{
 		id: PagesType.PURPOSE,
-		name: 'Purposes',
+		name: 'Цели',
 		icon: AimSvg(),
 	},
 	{
 		id: PagesType.SETTINGS,
-		name: 'Settings',
+		name: 'Настройки',
 		icon: SettingsSvg(),
 	},
 ]
