@@ -1,24 +1,25 @@
-$gray100: #0e0e12;
-$gray80: #1c1c23;
-$gray70: #353542;
-$gray60: #4e4e61;
-$gray50: #666680;
-$gray40: #83839c;
-$gray30: #a2a2b5;
-$gray20: #c1c1cd;
-$gray10: #e0e0e6;
-$white: #ffffff;
+$textColor: #4a4c4f;
+$background: #393f44;
+$yellow: #cbd577;
+$orange: #df8920;
+$red: #a30404;
+$green: #00cf64;
+$blue: #00e0e9;
+$darkBlue: #0005a5;
+$purple: #7102a0;
+$lightGray: #dce3e5;
+$darkGray: #2b2c2c;
 
-$primary100: #5e00f5;
-$primary50: #7722ff;
-$primary20: #924eff;
-$primary10: #ad7bff;
-$primary05: #c9a7ff;
-$primary0: #e4d3ff;
 
-$accentP100: #ff7966;
-$accentP50: #ffa699;
-$accentP0: #ffd2cc; 
+@mixin flex($jus, $al, $fxd) {
+	display: flex;
+	justify-content: $jus;
+	align-items: $al;
+	flex-direction: $fxd;
+}
 
-$acceptS100: #00fad9;
-$acceptS50: #7DFFEE;
+@mixin defaultShadow {
+	-webkit-box-shadow: 0px 0px 32px -8px rgba(179, 187, 199, 0.8);
+	-moz-box-shadow: 0px 0px 32px -8px rgba(179, 187, 199, 0.8);
+	box-shadow: 0px 0px 32px -8px rgba(179, 187, 199, 0.8);
+}

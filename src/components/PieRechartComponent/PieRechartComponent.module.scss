@@ -1,0 +1,27 @@
+.legendItemWrapper {
+	display: flex;
+	align-items: center;
+}
+.legendItemWrapper + .legendItemWrapper {
+	margin-top: 10px;
+}
+.legendLabel {
+	width: 35px;
+	height: 18px;
+	border-radius: 100px;
+	margin-right: 8px;
+}
+.legendPercent {
+	width: 65px;
+	margin-right: 10px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.label-top {
+	position: absolute;
+	
+
+	margin-bottom: 8px;
+	color: #ababab;
+}

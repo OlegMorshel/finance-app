@@ -1,0 +1,7 @@
+.revenueLayout {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		'statistic settings'
+		'statistic aim';
+}

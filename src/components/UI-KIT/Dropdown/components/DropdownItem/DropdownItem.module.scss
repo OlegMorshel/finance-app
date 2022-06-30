@@ -1,0 +1,10 @@
+.dropdownItem {
+	height: auto;
+	padding: 5px 10px;
+	width: 100%;
+	color: $textColor;
+	&:hover {
+		background-color: rgb(237, 248, 255);
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,23 @@
+.sectionWrapper {
+	padding: 20px 25px;
+	border-radius: 8px;
+	background-color: #ffffff;
+	@include defaultShadow;
+
+	.headerSection {
+		@include flex(space-between, center, row);
+		margin-bottom: 35px;
+		.title {
+			color: $textColor;
+		}
+		.subtitle {
+			cursor: pointer;
+			color: #3373fb;
+			transition: all 0.24s linear;
+			&:hover {
+				color: #3c9eec;
+				transition: all 0.24s linear;
+			}
+		}
+	}
+}
