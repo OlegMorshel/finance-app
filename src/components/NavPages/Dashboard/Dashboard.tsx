@@ -15,26 +15,23 @@ const Dashboard: React.FC<Props> = () => {
 			date: subDays(new Date(), num).toISOString().substring(0, 10),
 			value: 1 + Math.random(),
 			value2: 1 - Math.random(),
-			value3: 2+  Math.random(),
+			value3: 2 + Math.random(),
 		})
 	}
 	return (
 		<div className={cnb('dashboardLayout')}>
-			<div className={cnb('contentBlock')}>
-				<UsualSection title='Доходы и расходы' subtitle='ОТКРЫТЬ ГРАФИК'>
-					{/* <Chart /> */}
-					<CashFlowObserver />
-				</UsualSection>
-				<UsualSection title='КЭШ' subtitle='ОТКРЫТЬ ДЕТАЛИ'>
-					<Chart options={{colorFirstStatistic: '#33b95c', colorSecondStatistic: '#1da7e9', colorThirdStatistic: '#cc9a13'}} list={data} />
-				</UsualSection>
-				<UsualSection title='Структура доходов' subtitle='ВСЕ ДОХОДЫ'>
-					<PieRechartComponent />
-				</UsualSection>
-				<UsualSection title='Структура расходов' subtitle='ВСЕ РАСХОДЫ'>
-					<PieRechartComponent />
-				</UsualSection>
-			</div>
+			<UsualSection title='Доходы и расходы' subtitle='ОТКРЫТЬ ГРАФИК'>
+				<CashFlowObserver />
+			</UsualSection>
+			<UsualSection title='КЭШ' subtitle='ОТКРЫТЬ ДЕТАЛИ'>
+				<Chart options={{colorFirstStatistic: '#33b95c', colorSecondStatistic: '#1da7e9', colorThirdStatistic: '#cc9a13'}} list={data} />
+			</UsualSection>
+			<UsualSection title='Структура доходов' subtitle='ВСЕ ДОХОДЫ'>
+				<PieRechartComponent list={[]} />
+			</UsualSection>
+			<UsualSection title='Структура расходов' subtitle='ВСЕ РАСХОДЫ'>
+				<PieRechartComponent list={[]} />
+			</UsualSection>
 		</div>
 	)
 }

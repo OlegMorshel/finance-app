@@ -1,5 +1,15 @@
 $textColor: #4a4c4f;
 $background: #393f44;
+$yellow: #cbd577;
+$orange: #df8920;
+$red: #a30404;
+$green: #00cf64;
+$blue: #00e0e9;
+$darkBlue: #0005a5;
+$purple: #7102a0;
+$lightGray: #dce3e5;
+$darkGray: #2b2c2c;
+
 
 @mixin flex($jus, $al, $fxd) {
 	display: flex;

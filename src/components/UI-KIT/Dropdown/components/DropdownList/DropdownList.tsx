@@ -4,10 +4,11 @@ import {DropdownItemType} from '../../Dropdown'
 import DropdownItem from '../DropdownItem/DropdownItem'
 import styles from './DropdownList.module.scss'
 const cnb = classNames.bind(styles)
+export type DropdownModeType = 'single' | 'multi'
 interface Props {
 	list: DropdownItemType[]
 	setSelected: React.Dispatch<React.SetStateAction<DropdownItemType[]>>
-	mode: 'single' | 'multi'
+	mode: DropdownModeType
 }
 const DropdownList: React.FC<Props> = ({setSelected, list, mode}) => {
 	return (

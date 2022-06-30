@@ -2,14 +2,14 @@ import classNames from 'classnames/bind'
 import React, {useState} from 'react'
 import DropdownContainer from './components/DropdownContainer/DropdownContainer'
 import DropdownItem from './components/DropdownItem/DropdownItem'
-import DropdownList from './components/DropdownList/DropdownList'
+import DropdownList, { DropdownModeType } from './components/DropdownList/DropdownList'
 import styles from './Dropdown.module.scss'
 const cnb = classNames.bind(styles)
 interface Props {
 	list: DropdownItemType[]
 	selected: DropdownItemType[]
 	setSelected: React.Dispatch<React.SetStateAction<DropdownItemType[]>>
-	mode?: 'single' | 'multi'
+	mode?: DropdownModeType
 }
 
 export interface DropdownItemType {

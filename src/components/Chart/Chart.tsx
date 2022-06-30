@@ -21,7 +21,6 @@ interface Props {
 }
 const Chart: React.FC<Props> = ({height = 225, list, options}) => {
 	const CustomTooltip = ({active, payload, label}: TooltipProps<ValueType, NameType>) => {
-		console.log('payload', payload)
 		if (active && payload) {
 			return (
 				<div className={cnb('tooltip')}>

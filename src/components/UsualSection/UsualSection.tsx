@@ -12,7 +12,7 @@ const UsualSection: React.FC<Props> = ({children, title, subtitle}) => {
 		<div className={cnb('sectionWrapper')}>
 			<div className={cnb('headerSection')}>
 				<h3 className={cnb('title')}>{title}</h3>
-				<h4 className={cnb('subtitle')}>{subtitle}</h4>
+				{subtitle && <h4 className={cnb('subtitle')}>{subtitle}</h4>}
 			</div>
 			{children}
 		</div>

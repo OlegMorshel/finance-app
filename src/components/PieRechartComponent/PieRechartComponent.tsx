@@ -4,31 +4,16 @@ import {PieChart, Pie, Cell, Tooltip, Legend, TooltipProps, ResponsiveContainer,
 import {NameType, ValueType} from 'recharts/types/component/DefaultTooltipContent'
 import styles from './PieRechartComponent.module.scss'
 const cnb = classNames.bind(styles)
-const PieRechartComponent: React.FC = () => {
-	const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AF19FF']
 
-	const pieData = [
-		{
-			name: 'Chrome',
-			value: 68.85,
-		},
-		{
-			name: 'Firefox',
-			value: 7.91,
-		},
-		{
-			name: 'Edge',
-			value: 6.85,
-		},
-		{
-			name: 'Internet Explorer',
-			value: 6.14,
-		},
-		{
-			name: 'Others',
-			value: 10.25,
-		},
-	]
+export interface PieDataType {
+	name: string
+	value: number
+}
+interface Props {
+	list: PieDataType[]
+}
+const PieRechartComponent: React.FC<Props> = ({list}) => {
+	const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AF19FF']
 
 	const CustomTooltip = ({active, payload, label}: TooltipProps<ValueType, NameType>) => {
 		if (active && payload) {
@@ -44,14 +29,13 @@ const PieRechartComponent: React.FC = () => {
 
 	const CustomLegend = (props: TooltipProps<ValueType, NameType>) => {
 		const {payload} = props
-		console.log('payload ', payload)
 		return (
 			<div>
 				{payload?.map((legend) => {
 					const {value, color, payload} = legend
 
 					return (
-						<div className={cnb('legendItemWrapper')}>
+						<div className={cnb('legendItemWrapper')} key={String(value) ?? '' + color}>
 							<p className={cnb('legendPercent')}>{payload?.value} %</p>
 							<div style={{background: color}} className={cnb('legendLabel')} />
 							<p>{value}</p>
@@ -65,7 +49,7 @@ const PieRechartComponent: React.FC = () => {
 		<ResponsiveContainer width={'100%'} height={350}>
 			<PieChart>
 				<Pie
-					data={pieData}
+					data={list}
 					color='#000000'
 					dataKey='value'
 					nameKey='name'
@@ -79,9 +63,7 @@ const PieRechartComponent: React.FC = () => {
 					paddingAngle={5}
 					startAngle={90}
 					endAngle={-270}>
-					{pieData.map((entry, index) => (
-						<Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-					))}
+					{!!list.length && list.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)}
 				</Pie>
 				<Legend
 					iconType='circle'
