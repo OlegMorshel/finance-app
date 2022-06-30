@@ -5,29 +5,16 @@ import DropdownItem from '../DropdownItem/DropdownItem'
 import styles from './DropdownList.module.scss'
 const cnb = classNames.bind(styles)
 interface Props {
-	list?: DropdownItemType[]
+	list: DropdownItemType[]
+	setSelected: React.Dispatch<React.SetStateAction<DropdownItemType[]>>
+	mode: 'single' | 'multi'
 }
-const DropdownList: React.FC<Props> = (list) => {
+const DropdownList: React.FC<Props> = ({setSelected, list, mode}) => {
 	return (
 		<div className={cnb('dropdownList')}>
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
-			<DropdownItem item={{id: '1', label: 'title'}} />
+			{list.map((item) => (
+				<DropdownItem item={item} selectItem={setSelected} key={item.id} mode={mode} />
+			))}
 		</div>
 	)
 }

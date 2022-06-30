@@ -1,17 +1,30 @@
 import classNames from 'classnames/bind'
 import React from 'react'
-import {ArrowDownSvg} from '../../../../../assets/Icons'
+import {ArrowDownSvg, CloseSvg} from '../../../../../assets/Icons'
+import {DropdownItemType} from '../../Dropdown'
 import styles from './DropdownContainer.module.scss'
 const cnb = classNames.bind(styles)
 interface Props {
 	children?: React.ReactNode
-	onClick: () => void
+	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 	isOpen: boolean
+	selected: DropdownItemType[]
+	setSelected: React.Dispatch<React.SetStateAction<DropdownItemType[]>>
 }
-const DropdownContainer: React.FC<Props> = ({children, onClick, isOpen}) => {
+const DropdownContainer: React.FC<Props> = ({children, setIsOpen, isOpen, selected, setSelected}) => {
 	return (
-		<div onClick={() => onClick()} className={cnb('dropdownWrapper', {activeDropdownWrapper: isOpen})}>
-			<div className={cnb(isOpen ? 'arrowOpenStyle' : 'arrowStyle')}>
+		<div className={cnb('dropdownWrapper', {activeDropdownWrapper: isOpen, notEmptyWrapper: !!selected.length})}>
+			<div className={cnb('selectedList')}>
+				{selected.map((item) => (
+					<h4 className={cnb('selectedItem')} key={item.id}>
+						{item.label}
+						<div className={cnb('cleanButton')} onClick={() => setSelected((prev) => [...prev.filter((el) => el.id !== item.id)])}>
+							<CloseSvg />
+						</div>
+					</h4>
+				))}
+			</div>
+			<div className={cnb(isOpen ? 'arrowOpenStyle' : 'arrowStyle')} onClick={() => setIsOpen((prev) => !prev)}>
 				<ArrowDownSvg />
 			</div>
 			{children}

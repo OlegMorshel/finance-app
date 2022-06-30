@@ -5,7 +5,6 @@
 	background: white;
 	left: 0;
 	width: 100%;
-	padding: 5px 10px;
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	border: 1px solid $background;
@@ -17,17 +16,18 @@
 
 	max-height: 350px;
 	overflow-y: auto;
-}
-::-webkit-scrollbar {
-	width: 8px;
-}
-::-webkit-scrollbar-thumb {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	background: $background;
-	border-radius: 100px;
-}
-::-webkit-scrollbar-track {
-	border: 7px solid rgba(238, 237, 237, 0.5);
-	border-radius: 100px;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
+	&::-webkit-scrollbar-thumb {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		background: $background;
+		border-radius: 100px;
+	}
+	&::-webkit-scrollbar-track {
+		border: 7px solid rgba(238, 237, 237, 0.5);
+		border-radius: 100px;
+	}
 }

@@ -6,22 +6,22 @@ import DropdownList from './components/DropdownList/DropdownList'
 import styles from './Dropdown.module.scss'
 const cnb = classNames.bind(styles)
 interface Props {
-	list?: DropdownItemType[]
-	selected?: DropdownItemType
-	setSelected?: () => void
+	list: DropdownItemType[]
+	selected: DropdownItemType[]
+	setSelected: React.Dispatch<React.SetStateAction<DropdownItemType[]>>
+	mode?: 'single' | 'multi'
 }
 
 export interface DropdownItemType {
 	id: string
 	label: string
 }
-const Dropdown: React.FC<Props> = ({list}) => {
-	const [state, setState] = useState()
+const Dropdown: React.FC<Props> = ({list, setSelected, selected, mode = 'single'}) => {
 	const [isOpen, setIsOpen] = useState(false)
 	return (
 		<div className={cnb('dropdown')}>
-			<DropdownContainer onClick={() => setIsOpen((prev) => !prev)} isOpen={isOpen} />
-			{isOpen && <DropdownList list={list} />}
+			<DropdownContainer setIsOpen={setIsOpen} isOpen={isOpen} selected={selected} setSelected={setSelected} />
+			{isOpen && <DropdownList list={list} setSelected={setSelected} mode={mode} />}
 		</div>
 	)
 }
