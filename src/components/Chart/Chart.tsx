@@ -4,54 +4,65 @@ import {TooltipProps} from 'recharts'
 import styles from './Chart.module.scss'
 import classNames from 'classnames/bind'
 const cnb = classNames.bind(styles)
-interface DataType {
+export interface ChartDataType {
 	date: string
 	value: number
-	value2: number
+	value2?: number
+	value3?: number
 }
 interface Props {
 	height?: number
-}
-const Chart: React.FC<Props> = ({height = 225}) => {
-	const data: DataType[] = []
-	for (let num = 30; num >= 0; num--) {
-		data.push({
-			date: subDays(new Date(), num).toISOString().substring(0, 10),
-			value: 1 + Math.random(),
-			value2: 1 - Math.random(),
-		})
+	list: ChartDataType[]
+	options?: {
+		colorFirstStatistic?: string
+		colorSecondStatistic?: string
+		colorThirdStatistic?: string
 	}
-
+}
+const Chart: React.FC<Props> = ({height = 225, list, options}) => {
 	const CustomTooltip = ({active, payload, label}: TooltipProps<ValueType, NameType>) => {
+		console.log('payload', payload)
 		if (active && payload) {
 			return (
 				<div className={cnb('tooltip')}>
-					<h4>{format(parseISO(label), 'eeee, d MMM, yyyy')}</h4>
-					<p>{Number(payload[0]?.value)?.toFixed(2)}₽</p>
-					<p>{Number(payload[1]?.value)?.toFixed(2)}₽</p>
+					<h4 className={cnb('tooltipDate')}>{format(parseISO(label), 'eeee, d MMM, yyyy')}</h4>
+					<div className={cnb('tooltipLabels')}>
+						{payload
+							.sort((prev, next) => Number(next.value) - Number(prev.value))
+							.map((label) => (
+								<div className={cnb('tooltipLabel')}>
+									<div className={cnb('tooltipIcon')} style={{background: label.color}} />
+									<p>{Number(label.value)?.toFixed(2)}₽</p>
+								</div>
+							))}
+					</div>
 				</div>
 			)
 		}
-
 		return null
 	}
 
 	return (
 		<>
 			<ResponsiveContainer width={'100%'} height={height}>
-				<AreaChart data={data}>
+				<AreaChart data={list}>
 					<defs>
 						<linearGradient id='color' x1='0' y1='0' x2='0' y2='1'>
-							<stop offset='15%' stopColor='#00c054' stopOpacity={0.8} />
-							<stop offset='100%' stopColor='#00c054' stopOpacity={0.05} />
+							<stop offset='15%' stopColor={options?.colorFirstStatistic ?? '#00c054'} stopOpacity={0.8} />
+							<stop offset='100%' stopColor={options?.colorFirstStatistic ?? '#00c054'} stopOpacity={0.05} />
 						</linearGradient>
-						<linearGradient id='colorPv' x1='0' y1='0' x2='0' y2='1'>
-							<stop offset='5%' stopColor='#f01a42' stopOpacity={0.8} />
-							<stop offset='95%' stopColor='#f01a42' stopOpacity={0} />
+						<linearGradient id='color-2' x1='0' y1='0' x2='0' y2='1'>
+							<stop offset='5%' stopColor={options?.colorSecondStatistic ?? '#f01a42'} stopOpacity={0.8} />
+							<stop offset='95%' stopColor={options?.colorSecondStatistic ?? '#f01a42'} stopOpacity={0} />
+						</linearGradient>
+						<linearGradient id='color-3' x1='0' y1='0' x2='0' y2='1'>
+							<stop offset='5%' stopColor={options?.colorThirdStatistic ?? '#000000'} stopOpacity={0.8} />
+							<stop offset='95%' stopColor={options?.colorThirdStatistic ?? '#000000'} stopOpacity={0} />
 						</linearGradient>
 					</defs>
-					<Area dataKey={'value'} stroke={'#00c054'} fill={'url(#color)'} />
-					<Area dataKey={'value2'} stroke={'#f01a42'} fill={'url(#colorPv)'} />
+					<Area dataKey={'value'} stroke={options?.colorFirstStatistic ?? '#00c054'} fill={'url(#color)'} />
+					<Area dataKey={'value2'} stroke={options?.colorSecondStatistic ?? '#f01a42'} fill={'url(#color-2)'} />
+					<Area dataKey={'value3'} stroke={options?.colorThirdStatistic ?? '#000000'} fill={'url(#color-3)'} />
 
 					<XAxis
 						dataKey={'date'}

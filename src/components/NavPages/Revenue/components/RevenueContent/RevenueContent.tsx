@@ -10,7 +10,7 @@ const RevenueContent: React.FC<Props> = () => {
 	return (
 		<div className={cnb('statisticWrapper')}>
 			<PieRechartComponent />
-			<Chart />
+			{/* <Chart /> */}
 		</div>
 	)
 }
