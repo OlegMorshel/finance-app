@@ -4,6 +4,7 @@ import styles from './Revenue.module.scss'
 import RevenueContent from './components/RevenueContent/RevenueContent'
 import RevenueSettings from './components/RevenueSettings/RevenueSettings'
 import Dropdown, {DropdownItemType} from '../../UI-KIT/Dropdown/Dropdown'
+import TextEditor from '../../UI-KIT/TextEditor/TextEditor'
 const cnb = classNames.bind(styles)
 interface Props {}
 const Revenue: React.FC<Props> = () => {
@@ -23,6 +24,7 @@ const Revenue: React.FC<Props> = () => {
 			<RevenueSettings />
 			<div>
 				<Dropdown list={list} selected={state} setSelected={setState} mode={'multi'} />
+				<TextEditor />
 			</div>
 		</div>
 	)
