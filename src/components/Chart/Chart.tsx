@@ -76,9 +76,7 @@ const Chart: React.FC<Props> = ({height = 225, list, options}) => {
 							// return ''
 						}}
 					/>
-
-					<YAxis dataKey={'value'} axisLine={false} tickLine={false} tickCount={8} tickFormatter={(number) => `${number.toFixed(2)} ₽`} />
-
+					<YAxis axisLine={false} tickLine={false} tickCount={6} tickFormatter={(number) => `${number.toFixed(2)} ₽`} />
 					<Tooltip content={<CustomTooltip />} />
 
 					<CartesianGrid opacity={0.3} vertical={false} />

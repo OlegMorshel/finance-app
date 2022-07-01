@@ -1,21 +1,37 @@
 .editorClassName {
-	height: 200px;
-	border: 1px solid $textColor;
-	background: rgb(232, 240, 247);
+	border: 1px solid #f1f1f1;
+	background-color: #c9fcf8;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	color: $textColor;
 	&::-webkit-scrollbar {
-		width: 8px;
+		width: 6px;
+		height: 10px;
+		max-height: 10px;
 	}
 	&::-webkit-scrollbar-thumb {
 		margin-top: 10px;
 		margin-bottom: 10px;
-		background: $background;
+		background: #035751;
 		border-radius: 100px;
+		height: 10px;
+		max-height: 10px;
 	}
 	&::-webkit-scrollbar-track {
-		border: 7px solid rgba(238, 237, 237, 0.5);
+		border: 7px solid rgba(238, 237, 237, 1);
 		border-radius: 100px;
 	}
+}
+.toolbarClassName {
+	width: 100%;
+	background-color: #c9fcf8;
+	border-radius: 5px;
+}
+.boldIconSection,
+.italicIconSection {
+	width: 30px;
+	height: 24px;
+	background: rgb(210, 249, 239);
+	border-radius: 5px;
+	border: 1px solid rgb(0, 105, 93);
 }
