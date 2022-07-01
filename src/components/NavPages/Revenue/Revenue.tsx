@@ -5,6 +5,7 @@ import RevenueContent from './components/RevenueContent/RevenueContent'
 import RevenueSettings from './components/RevenueSettings/RevenueSettings'
 import Dropdown, {DropdownItemType} from '../../UI-KIT/Dropdown/Dropdown'
 import TextEditor from '../../UI-KIT/TextEditor/TextEditor'
+import Checkbox from '../../UI-KIT/Checkbox/Checkbox'
 const cnb = classNames.bind(styles)
 interface Props {}
 const Revenue: React.FC<Props> = () => {
@@ -18,6 +19,7 @@ const Revenue: React.FC<Props> = () => {
 		{id: '7', label: 'text7'},
 	]
 	const [state, setState] = useState<DropdownItemType[]>([])
+	const [isChecked, setIsChecked] = useState(false)
 	return (
 		<div className={cnb('revenueLayout')}>
 			<RevenueContent />
@@ -25,6 +27,7 @@ const Revenue: React.FC<Props> = () => {
 			<div>
 				<Dropdown list={list} selected={state} setSelected={setState} mode={'multi'} />
 				<TextEditor />
+				<Checkbox isChecked={isChecked} setIsChecked={setIsChecked} />
 			</div>
 		</div>
 	)

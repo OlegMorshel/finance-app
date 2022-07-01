@@ -1,3 +1,9 @@
+import {TextEditorBoldTextSvg} from '../../../assets/Icons'
+import styles from './TextEditor.module.scss'
+import classNames from 'classnames/bind'
+const cnb = classNames.bind(styles)
+import boldIcon from '../../../assets/images/bold.png'
+import italicIcon from '../../../assets/images/italic.png'
 export const textEditorConfig = {
 	options: [
 		'inline',
@@ -20,8 +26,8 @@ export const textEditorConfig = {
 		component: undefined,
 		dropdownClassName: undefined,
 		options: ['bold', 'italic', 'underline', 'strikethrough', 'monospace', 'superscript', 'subscript'],
-		// bold: {icon: bold, className: undefined},
-		// italic: {icon: italic, className: undefined},
+		bold: {icon: boldIcon, className: cnb('boldIconSection')},
+		italic: {icon: italicIcon, className: cnb('italicIconSection')},
 		// underline: {icon: underline, className: undefined},
 		// strikethrough: {icon: strikethrough, className: undefined},
 		// monospace: {icon: monospace, className: undefined},
